@@ -131,7 +131,7 @@ export default function Home() {
               <Linkedin className="w-4 h-4" />
             </a>
             <a 
-              href="/resume.pdf" 
+              href="/Md_Rehan_Resume.pdf" 
               download="Md_Rehan_Resume.pdf"
               className="text-zinc-400 hover:text-white transition-colors duration-300 border-l border-white/10 pl-2 flex items-center"
               title="Download Resume"
@@ -225,7 +225,7 @@ export default function Home() {
                 </button>
                 <span className="text-zinc-700 hidden sm:inline">|</span>
                 <a
-                  href="/resume.pdf"
+                  href="/Md_Rehan_Resume.pdf"
                   download="Md_Rehan_Resume.pdf"
                   className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer"
                 >
