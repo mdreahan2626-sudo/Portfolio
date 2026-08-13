@@ -272,12 +272,66 @@ const TechIcon = ({ name }) => {
           <path d="M17 3h-4v4h4V3zM7 17H3v4h4v-4zM21 17h-4v4h4v-4zM15 7v4H9v6H7v-6h6V7h2zM15 11v6h2v-6h-2z" />
         </svg>
       );
+    case 'shadcnui':
+      return (
+        <svg className="w-4 h-4 shrink-0 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4 4 20" />
+        </svg>
+      );
+    case 'customedgeauthentication':
+      return (
+        <svg className="w-4 h-4 shrink-0 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+      );
     default:
       return <Code className="w-4 h-4 shrink-0 text-zinc-400" />;
   }
 };
 
 const projectsData = [
+  {
+    id: 'prept',
+    title: 'Prept – AI Interview Coach',
+    shortIntro: 'An AI-powered interview preparation and coaching platform delivering real-time mock interviews, ATS resume scoring, and live mentor booking.',
+    problem: 'Traditional developer interview preparation is generic, lacks personalized feedback on coding/behavioral logic, and human coaching mock sessions are expensive.',
+    solution: 'Combines RAG grounded domain coaching, instant Gemini AI mock evaluations, ATS resume parsing, and a peer mentor booking platform with Edge security.',
+    github: 'https://github.com/mdreahan2626-sudo/Prept-Interview',
+    live: 'https://prept-interview-iota.vercel.app',
+    featuredIcon: <Cpu className="w-5 h-5 text-indigo-400 animate-pulse" />,
+    accentColor: 'from-indigo-500/20 to-cyan-500/20',
+    borderColor: 'group-hover:border-indigo-500/30',
+    technologies: [
+      'Next.js 16 (React 19)',
+      'Tailwind CSS v4',
+      'Shadcn UI',
+      'Framer Motion',
+      'Python FastAPI',
+      'Google Gemini API',
+      'PostgreSQL',
+      'Supabase',
+      'Prisma ORM',
+      'Arcjet (Rate Limiting)',
+      'Custom Edge Authentication',
+      'Resend Email API',
+      'Docker'
+    ],
+    highlights: [
+      {
+        title: 'AI Mock Interviews & RAG',
+        desc: 'Interactive simulated interviews using Gemini AI, with instant scoring and grounded feedback based on system design, STAR behavioral framework, and coding guidelines.'
+      },
+      {
+        title: 'ATS Analyzer & Optimizer',
+        desc: 'Scans uploaded resumes against specific target job descriptions to identify skill gaps and automatically recommend optimized resume bullet points.'
+      },
+      {
+        title: 'Edge Authentication & Security',
+        desc: 'Custom lightweight JWT session verification running inside Next.js 16 Edge Middleware, secured with Arcjet WAF bot detection and rate-limiting.'
+      }
+    ]
+  },
   {
     id: 'smartfarm',
     title: 'SmartFarm Console & AgroBot',
@@ -448,7 +502,7 @@ const projectsData = [
 ];
 
 export default function ProjectsSection() {
-  const [selectedId, setSelectedId] = useState('smartfarm');
+  const [selectedId, setSelectedId] = useState('prept');
 
   const selectedProject = projectsData.find(p => p.id === selectedId) || projectsData[0];
 

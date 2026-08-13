@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, ArrowRight, Server, Database, Code, Cpu, Mail, ExternalLink, GraduationCap, User, FileText } from 'lucide-react';
+import { Github, Linkedin, ArrowRight, Server, Database, Code, Cpu, Mail, ExternalLink, GraduationCap, User, FileText, Sparkles } from 'lucide-react';
 import Lenis from 'lenis';
 
 // Import components
@@ -87,7 +87,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="hidden lg:flex items-center gap-1.5 px-2 py-1 rounded-full border border-white/5 bg-black/40 backdrop-blur-md pointer-events-auto"
         >
-          {['about', 'details', 'skills', 'projects', 'contact'].map((sec) => (
+          {['about', 'services', 'skills', 'projects', 'resume', 'contact'].map((sec) => (
             <button
               key={sec}
               onClick={() => scrollToSection(sec)}
@@ -161,44 +161,59 @@ export default function Home() {
               </p>
               
               <p className="text-zinc-300 text-sm md:text-base mt-4 leading-relaxed font-sans font-light border-l-2 border-white/10 pl-4">
-                I am a backend developer who provides freelance services. I engineer performant server architectures, custom API networks, and intelligent backend databases.
+                I design and engineer performant backend architectures, custom API networks, and intelligent AI-driven systems to help startups and businesses scale.
               </p>
               
               <div className="flex items-center gap-2 mt-6 text-xs text-zinc-500 font-mono">
-                <span className="text-violet-400 font-bold font-mono animate-bounce">↓</span> Scroll down for credentials & details
+                <span className="text-violet-400 font-bold font-mono animate-bounce">↓</span> Scroll down for services & case studies
               </div>
             </GlassCard>
           </div>
         </section>
 
-        {/* SECTION 2: PROFILE DETAILS (Left Column) - VIT Bhopal & Detailed Intro */}
-        <section id="details" className="min-h-screen flex items-center justify-start px-6 md:px-24 max-w-7xl mx-auto py-20">
+        {/* SECTION 2: SERVICES & SOLUTIONS (Left Column) - Tailored for Freelance & Consulting */}
+        <section id="services" className="min-h-screen flex items-center justify-start px-6 md:px-24 max-w-7xl mx-auto py-20">
           <div className="w-full lg:w-[48%] pointer-events-auto">
             <GlassCard delay={0.1}>
               <span className="px-2.5 py-1 rounded-full text-[10px] font-mono tracking-widest bg-white/5 border border-white/10 text-zinc-400 uppercase">
-                Profile
+                Services
               </span>
               <h2 className="text-3xl font-bold mt-4 tracking-tight">
-                Academic & Profile
+                Freelance & Consulting
               </h2>
               
               <div className="mt-5 space-y-4 font-sans text-sm text-zinc-300">
                 <div className="flex gap-3 items-start p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
-                  <GraduationCap className="w-5 h-5 text-violet-400 shrink-0 mt-0.5" />
+                  <Server className="w-5 h-5 text-violet-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-white text-xs font-mono uppercase tracking-wider">Education</h4>
-                    <p className="mt-1">B.Tech CSE Core</p>
-                    <p className="text-xs text-zinc-400 mt-0.5">VIT Bhopal University</p>
+                    <h4 className="font-semibold text-white text-xs font-mono uppercase tracking-wider">Backend & API Engineering</h4>
+                    <p className="text-xs text-zinc-300 mt-1">Designing modular microservices, clean REST/FastAPI endpoints, secure JWT/OAuth systems, and robust rate-limiting solutions.</p>
                   </div>
                 </div>
 
                 <div className="flex gap-3 items-start p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
-                  <User className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                  <Sparkles className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-white text-xs font-mono uppercase tracking-wider">Engineering Focus</h4>
-                    <p className="mt-1">Designing microservices, building secure authentication protocols, query optimizations, and data handling libraries.</p>
+                    <h4 className="font-semibold text-white text-xs font-mono uppercase tracking-wider">AI & Agentic Workflows</h4>
+                    <p className="text-xs text-zinc-300 mt-1">Building custom RAG architectures, LangGraph multi-agent flows, semantic searches, and computer-vision OCR data extractors.</p>
                   </div>
                 </div>
+
+                <div className="flex gap-3 items-start p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
+                  <Database className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold text-white text-xs font-mono uppercase tracking-wider">Database & Pipeline Scaling</h4>
+                    <p className="text-xs text-zinc-300 mt-1">Optimizing PostgreSQL/Prisma query latencies, structuring transaction layers, and building real-time message buses with Redis/Kafka.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Minimal Education Sub-badge */}
+              <div className="mt-4 px-3 py-2 rounded-lg bg-white/[0.01] border border-white/5 flex items-center gap-2">
+                <GraduationCap className="w-4 h-4 text-zinc-500" />
+                <span className="text-[10px] font-mono text-zinc-400">
+                  Academic Foundation: B.Tech CSE Core (VIT Bhopal University)
+                </span>
               </div>
 
               <div className="flex gap-4 mt-6 items-center flex-wrap">
@@ -298,7 +313,66 @@ export default function Home() {
           <ProjectsSection />
         </section>
 
-        {/* SECTION 5: CONTACT (Right Column) */}
+        {/* SECTION 5: RESUME / CREDENTIALS (Left Column) */}
+        <section id="resume" className="min-h-screen flex items-center justify-start px-6 md:px-24 max-w-7xl mx-auto py-20">
+          <div className="w-full lg:w-[48%] pointer-events-auto">
+            <GlassCard delay={0.1}>
+              <span className="px-2.5 py-1 rounded-full text-[10px] font-mono tracking-widest bg-white/5 border border-white/10 text-zinc-400 uppercase">
+                Credentials
+              </span>
+              <h2 className="text-3xl font-bold mt-4 tracking-tight">
+                Education & Certifications
+              </h2>
+
+              {/* Education Sub-section */}
+              <div className="mt-6">
+                <h4 className="text-[10px] uppercase text-violet-400 font-bold tracking-wider mb-4 flex items-center gap-1.5 font-mono">
+                  <GraduationCap className="w-4 h-4" /> Education
+                </h4>
+                <div className="space-y-5 border-l border-white/10 pl-4 ml-2">
+                  <div className="relative">
+                    <span className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-violet-400" />
+                    <h5 className="text-xs font-semibold text-white">B.Tech in Computer Science & Engineering</h5>
+                    <p className="text-[10px] text-zinc-400 font-mono">VIT Bhopal University — 2024 – 2028</p>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-zinc-600" />
+                    <h5 className="text-xs font-semibold text-white">Class XII (ISC)</h5>
+                    <p className="text-[10px] text-zinc-400 font-mono">St. Joseph & Mary’s School, Kolkata — 2024</p>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-zinc-600" />
+                    <h5 className="text-xs font-semibold text-white">Class X (ICSE)</h5>
+                    <p className="text-[10px] text-zinc-400 font-mono">St. Joseph & Mary’s School, Kolkata — 2022</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Certifications Sub-section */}
+              <div className="mt-6 pt-6 border-t border-white/5">
+                <h4 className="text-[10px] uppercase text-cyan-400 font-bold tracking-wider mb-4 flex items-center gap-1.5 font-mono">
+                  <Sparkles className="w-4 h-4" /> Certifications
+                </h4>
+                <div className="space-y-3.5">
+                  <div className="p-3.5 rounded-xl bg-white/[0.015] border border-white/5">
+                    <h5 className="text-xs font-semibold text-zinc-200">The Bits and Bytes of Computer Networking</h5>
+                    <p className="text-[10px] text-zinc-400 font-mono mt-0.5">Coursera — Google Professional Certificate</p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/[0.015] border border-white/5">
+                    <h5 className="text-xs font-semibold text-zinc-200">Marketing Analytics</h5>
+                    <p className="text-[10px] text-zinc-400 font-mono mt-0.5">NPTEL — National Programme on Technology Enhanced Learning</p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/[0.015] border border-white/5">
+                    <h5 className="text-xs font-semibold text-zinc-200">Cloud Computing</h5>
+                    <p className="text-[10px] text-zinc-400 font-mono mt-0.5">NPTEL — National Programme on Technology Enhanced Learning</p>
+                  </div>
+                </div>
+              </div>
+            </GlassCard>
+          </div>
+        </section>
+
+        {/* SECTION 6: CONTACT (Right Column) */}
         <section id="contact" className="min-h-screen flex items-center justify-end px-6 md:px-24 max-w-7xl mx-auto py-20">
           <div className="w-full lg:w-[48%] pointer-events-auto">
             <GlassCard delay={0.1}>

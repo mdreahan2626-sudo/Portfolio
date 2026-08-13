@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Md Rehan | Backend Developer Portfolio",
-  description: "Portfolio of Md Rehan, a VIT Bhopal backend developer specializing in MERN stack, FastAPI, System Design, and Python libraries.",
+  title: "Md Rehan | Backend Architect & AI Integrator",
+  description: "Professional backend developer offering freelance and consulting services in system architecture, custom API design, database scaling, and LangGraph AI agents.",
 };
 
 export default function RootLayout({ children }) {
