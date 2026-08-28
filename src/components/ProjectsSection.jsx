@@ -379,7 +379,7 @@ const projectsData = [
     problem: 'Combats low retention rates from passive reading, automates the hours-long process of creating test reviews, and resolves document retrieval overload.',
     solution: 'Processes raw classroom audio or textbook pages into auto-generated flashcards, mind maps, and diagnostics, paired with a semantic doc chat helper.',
     github: 'https://github.com/mdreahan2626-sudo/LectureMind',
-    live: 'https://frontend-7hfjr81zr-rehanebjkbkl.vercel.app/',
+    live: 'https://lecturemind-app.vercel.app',
     featuredIcon: <Brain className="w-5 h-5 text-purple-400" />,
     accentColor: 'from-purple-500/20 to-violet-500/20',
     borderColor: 'group-hover:border-purple-500/30',
